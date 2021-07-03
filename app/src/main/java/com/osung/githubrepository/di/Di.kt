@@ -3,6 +3,8 @@ package com.osung.githubrepository.di
 import com.osung.githubrepository.model.remote.RemoteSearchDataSourceImpl
 import com.osung.githubrepository.model.datasource.SearchDataSource
 import com.osung.githubrepository.model.remote.Api
+import com.osung.githubrepository.model.repository.SearchRepositoryImpl
+import com.osung.githubrepository.repository.SearchRepository
 import com.osung.githubrepository.view.MainViewModel
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.Interceptor
@@ -18,6 +20,7 @@ val viewModelModule = module {
 }
 
 val dataModule = module {
+    single<SearchRepository> { SearchRepositoryImpl(get()) }
     single<SearchDataSource> { RemoteSearchDataSourceImpl(get()) }
 }
 
