@@ -1,7 +1,8 @@
-package com.osung.githubrepository
+package com.osung.githubrepository.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.osung.githubrepository.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
