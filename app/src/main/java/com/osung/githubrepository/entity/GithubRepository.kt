@@ -1,6 +1,6 @@
 package com.osung.githubrepository.entity
 
-data class Repository(
+data class GithubRepository(
     val id: Long,
     val fullName: String,
     val description: String,

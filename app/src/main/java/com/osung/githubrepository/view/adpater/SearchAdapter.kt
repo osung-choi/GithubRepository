@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.osung.githubrepository.databinding.ItemSearchRepositoryBinding
-import com.osung.githubrepository.entity.Repository
+import com.osung.githubrepository.entity.GithubRepository
 
-class SearchAdapter: PagingDataAdapter<Repository, SearchAdapter.SearchViewHolder>(RepositoryDiffUtil()) {
+class SearchAdapter: PagingDataAdapter<GithubRepository, SearchAdapter.SearchViewHolder>(RepositoryDiffUtil()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return SearchViewHolder(ItemSearchRepositoryBinding.inflate(inflater, parent, false))
@@ -22,8 +22,8 @@ class SearchAdapter: PagingDataAdapter<Repository, SearchAdapter.SearchViewHolde
     inner class SearchViewHolder(
         private val binding: ItemSearchRepositoryBinding
     ): RecyclerView.ViewHolder(binding.root) {
-        fun bind(repositoryItem: Repository) {
-            binding.repositoryItem = repositoryItem
+        fun bind(githubRepositoryItem: GithubRepository) {
+            binding.item = githubRepositoryItem
         }
     }
 }
