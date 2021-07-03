@@ -7,6 +7,7 @@
 * 언어 : Kotlin
 * 구성 : MVVM
 * 라이브러리
+  * ViewModel
   * DataBinding
   * LiveData
   * Paging3
