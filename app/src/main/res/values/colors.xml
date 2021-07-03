@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="line">#FFB0B0B0</color>
+    <color name="repository_full_name">#FF0088FF</color>
 </resources>
