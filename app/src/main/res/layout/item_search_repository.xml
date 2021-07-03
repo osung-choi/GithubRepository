@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.osung.githubrepository.entity.GithubRepository" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/repoFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textColor="@color/repository_full_name"
+            android:textStyle="bold"
+            android:text="@{item.fullName}"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="osung-choi/GithubRepository"/>
+
+        <TextView
+            android:id="@+id/repoDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:text="@{item.description}"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/repoFullName"
+            tools:text="repository description"/>
+
+        <ImageView
+            android:id="@+id/imgStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_star"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/repoDescription"
+            app:layout_constraintEnd_toStartOf="@id/repoStarCount"/>
+
+        <TextView
+            android:id="@+id/repoStarCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.starCount}"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="@id/imgStar"
+            app:layout_constraintBottom_toBottomOf="@id/imgStar"
+            app:layout_constraintEnd_toStartOf="@id/imgFork"
+            tools:text="12345"/>
+
+        <ImageView
+            android:id="@+id/imgFork"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_fork"
+            app:layout_constraintTop_toTopOf="@id/imgStar"
+            app:layout_constraintBottom_toBottomOf="@id/imgStar"
+            app:layout_constraintEnd_toStartOf="@id/repoForkCount"/>
+
+        <TextView
+            android:id="@+id/repoForkCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.forkCount}"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/imgStar"
+            app:layout_constraintBottom_toBottomOf="@id/imgStar"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="12345"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
