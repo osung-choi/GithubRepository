@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil
 import com.osung.githubrepository.R
 import com.osung.githubrepository.databinding.ActivityMainBinding
 import com.osung.githubrepository.view.adpater.SearchAdapter
+import com.osung.githubrepository.view.utils.KeyboardUtil
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -27,5 +28,12 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
 
         binding.searchResultList.adapter = adapter
+
+        viewModel.githubRepositoryPage.observe(this) {
+            adapter.submitData(lifecycle, it)
+
+            binding.searchResultList.scrollToPosition(0)
+            KeyboardUtil.hideKeyboard(this, binding.inputSearchQuery)
+        }
     }
 }

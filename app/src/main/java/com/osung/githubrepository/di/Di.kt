@@ -16,7 +16,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val viewModelModule = module {
-    viewModel { MainViewModel() }
+    viewModel { MainViewModel(get()) }
 }
 
 val dataModule = module {
