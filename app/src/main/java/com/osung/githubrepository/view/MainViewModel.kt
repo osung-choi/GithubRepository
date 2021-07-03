@@ -13,14 +13,25 @@ class MainViewModel(
 ): ViewModel() {
 
     private val inputQuery = MutableLiveData<String>()
-    val githubRepositoryPage = Transformations.switchMap(inputQuery) {
+    val githubRepositoryPage = Transformations.switchMap(inputQuery) { //
         searchGithubRepository(it)
     }
 
+    /**
+     * 검색 버튼 클릭 이벤트
+     *
+     * @param query
+     */
     fun btnSearchClick(query: String) {
         if(query.isNotBlank()) inputQuery.value = query
     }
 
+    /**
+     * Github Repository 검색
+     *
+     * @param query 검색어
+     * @return PagingData 를 LiveData 형태로 반환
+     */
     private fun searchGithubRepository(query: String): LiveData<PagingData<GithubRepository>> {
         return repository.searchRepositoryPage(query)
     }

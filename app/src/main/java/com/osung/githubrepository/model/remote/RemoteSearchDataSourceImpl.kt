@@ -13,7 +13,7 @@ class RemoteSearchDataSourceImpl(
         page: Int,
         perPage: Int
     ): Single<ResponseRepositorySearchResult> {
-        val apiQuery = query.plus(" in:name")
+        val apiQuery = query.plus(" in:name") //검색어가 포함된 Repository 요청
 
         return api.requestSearchRepositories(apiQuery, page, perPage)
     }
