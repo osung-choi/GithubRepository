@@ -7,6 +7,10 @@
         <variable
             name="viewModel"
             type="com.osung.githubrepository.view.MainViewModel" />
+
+        <variable
+            name="query"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,6 +31,8 @@
             android:padding="10dp"
             android:hint="@string/string_edit_search_query"
             android:importantForAutofill="no"
+            android:text="@={query}"
+            app:onEditorSearchActionListener="@{() -> viewModel.btnSearchClick(query)}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnSearch"/>
@@ -37,6 +43,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_search"
             android:padding="10dp"
+            android:onClick="@{() -> viewModel.btnSearchClick(query)}"
             app:layout_constraintTop_toTopOf="@id/inputSearchQuery"
             app:layout_constraintBottom_toBottomOf="@id/inputSearchQuery"
             app:layout_constraintEnd_toEndOf="parent" />
