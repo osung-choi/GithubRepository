@@ -13,13 +13,13 @@ data class ResponseRepositorySearchResult(
 
 data class RepositorySearchResult(
     @SerializedName("description")
-    val description: Any,
+    val description: String?,
     @SerializedName("forks_count")
     val forksCount: Int,
     @SerializedName("full_name")
     val fullName: String,
     @SerializedName("id")
-    val id: Int,
+    val id: Long,
     @SerializedName("stargazers_count")
     val stargazersCount: Int
 )

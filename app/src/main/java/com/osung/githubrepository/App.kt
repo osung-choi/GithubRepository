@@ -18,3 +18,5 @@ class App: Application() {
         }
     }
 }
+
+const val PAGE_SIZE = 100
