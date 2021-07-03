@@ -6,7 +6,7 @@
     <data>
         <variable
             name="item"
-            type="com.osung.githubrepository.entity.GithubRepository" />
+            type="com.osung.githubrepository.repository.entity.GithubRepository" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

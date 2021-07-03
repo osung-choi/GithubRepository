@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.osung.githubrepository.databinding.ItemSearchRepositoryBinding
-import com.osung.githubrepository.entity.GithubRepository
+import com.osung.githubrepository.repository.entity.GithubRepository
 
 class SearchAdapter: PagingDataAdapter<GithubRepository, SearchAdapter.SearchViewHolder>(RepositoryDiffUtil()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
