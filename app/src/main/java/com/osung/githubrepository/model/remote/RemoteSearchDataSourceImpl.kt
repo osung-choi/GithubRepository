@@ -13,6 +13,8 @@ class RemoteSearchDataSourceImpl(
         page: Int,
         perPage: Int
     ): Single<ResponseRepositorySearchResult> {
-        return api.requestSearchRepositories(query, page, perPage)
+        val apiQuery = query.plus(" in:name")
+
+        return api.requestSearchRepositories(apiQuery, page, perPage)
     }
 }
